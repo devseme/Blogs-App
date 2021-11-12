@@ -1,12 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlogSite</title>
-</head>
-<body>
-    <p> hello blog site</p>
-</body>
-</html>
+
+{% extends 'base.html'%}
+{% import 'macros.html' as macro %}
+{%block content%}
+<div class="col-sm-12">
+    <div class="panel panel-default">
+        <div class="card">
+            <div class="panel-body" >
+            <blockquote class="blockquote mb-0 card-body">
+                <p>{{quote.quote}}</p>
+                <footer class="blockquote-footer">
+                    <cite title="Source Title" style="color: #C4402A;" >{{quote.author| upper}}</cite>
+                    
+                </footer>
+               
+                
+              </blockquote>
+            </div>
+   </div>
+</div>
+<footer style="width:auto;color:#FFFFFF;background-color: #292A44;">
+    <div class="copyright text-center">
+        <p> copyright &copy;2021 BLOGSITE-devseme</p> 
+    </div>
+</footer>
+{%endblock%}

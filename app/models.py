@@ -40,4 +40,11 @@ class User(UserMixin, db.Model):
 
     def _repr_(self):
         return f'User {self.username}'
- 
+
+class Quote:
+    """
+    Blueprint class for quotes consumed from API
+    """
+    def __init__(self, author, quote):
+        self.author = author
+        self.quote = quote 
