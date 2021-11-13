@@ -11,7 +11,7 @@ def load_user(user_id):
    # user table
 class User(UserMixin, db.Model):  
     _tablename_ = 'user'
-    # posts = db.relationship('Post', backref='author', lazy='dynamic')
+    blogs = db.relationship('Blog', backref='author', lazy='dynamic')
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(255))
     email = db.Column(db.String(255), unique=True, index=True)
@@ -48,3 +48,33 @@ class Quote:
     def __init__(self, author, quote):
         self.author = author
         self.quote = quote 
+
+class Blog(db.Model):
+    __tablename__='blogs'
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(255))
+    category = db.Column(db.String(255))
+    content= db.Column(db.String(255))
+    created_by= db.Column(db.String(255))
+    date_posted = db.Column(db.DateTime, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+
+      
+     # save/delete blog
+
+    def save_blog(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def delete_blog(self):
+        db.session.delete(self)
+        db.session.commit()    
+
+    @classmethod
+    def get_blogs(cls,id):
+            blogs =Blog.query.filter_by(blog_id=id).all()
+            return blogs    
+
+    def _repr_(self):
+        return f'Blog {self.title}'      

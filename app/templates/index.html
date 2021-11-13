@@ -18,9 +18,36 @@
             </div>
    </div>
 </div>
-<footer style="width:auto;color:#FFFFFF;background-color: #292A44;">
-    <div class="copyright text-center">
-        <p> copyright &copy;2021 BLOGSITE-devseme</p> 
+
+
+
+{% for blog in blogs %} 
+    <div class="col-md-3 ">
+        <div class="text-centre">
+            <div class="card text-white bg-info mb-3" style="max-width: 30rem; margin:1vw; padding:1vw;">
+                <h4 class="card-header">Blog Title :{{blog.title}}</h4>
+                <div class="card-body">
+
+                <p class="card-title"> Blog Category: {{blog.category}}</p>
+
+                <p class="card-text">Blog Description: {{blog.content}}</p>
+                
+                <p class="card-text">Blogger: {{blog.created_by}}</p>
+
+              <!-- <footer style="width:auto;color:#FFFFFF;background-color: #292A44;">
+            <div class="copyright text-center">
+                <p> copyright &copy;2021 BLOGSITE-devseme</p> 
+            </div>
+        </footer>    -->
+             
+         
+            </div>
+        </div>
+         
+        </div>
+        
     </div>
-</footer>
+ 
+{% endfor %}
+
 {%endblock%}
