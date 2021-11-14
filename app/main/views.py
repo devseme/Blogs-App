@@ -73,3 +73,16 @@ def update_pic(uname):
         user.profile_pic_path = path
         db.session.commit()
     return redirect(url_for('main.profile', uname=uname))
+
+
+@main.route('/blog/<int:id>/delete', methods=['GET', 'POST'])
+@login_required
+def delete_blog(id):
+    """
+        View delete post function that returns the deleted  blog page and its data
+    """
+    blog = Blog.query.get_or_404(id)
+    db.session.delete(blog)
+    db.session.commit()
+    flash('You have successfully deleted the blog', 'success')
+    return redirect(url_for('main.index'))    

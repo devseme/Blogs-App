@@ -34,11 +34,13 @@
 
                 <p class="card-text">Blogger: {{blog.created_by}}</p>
 
-        <footer style="width:auto;color:#FFFFFF;background-color: #292A44;">
+                <a href="{{ url_for('main.delete_blog',id=blog.id)}}" class="text-danger" title="Delete Post"><small><i></i>
+
+        <footer class="footer" style="width:auto;color:#FFFFFF;background-color: #292A44;">
             <div class="copyright text-center">
                 <p> copyright &copy;2021 BLOGSITE-devseme</p> 
             </div>
-        </footer>    
+        </footer>  
              
          
             </div>
