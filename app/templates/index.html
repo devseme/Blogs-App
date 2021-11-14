@@ -51,8 +51,9 @@ background-repeat: no-repeat;"
 
                 <p class="card-text">Blogger: {{blog.created_by}}</p>
               
-               <button type="button" class="btn btn-danger" style=" margin-left:38vw; "a href="{{ url_for('main.delete_blog',id=blog.id)}}" class="text-danger" title="Delete Blog">Delete Blog</a></button>
-
+               <!--  "a href="{{ url_for('main.delete_blog',id=blog.id)}}" class="text-danger" title="Delete Blog">Delete Blog</a>-->
+               <button type="button" class="btn btn-danger"style=" margin-left:38vw;" a href="{{ url_for('main.delete_blog',id=blog.id)}}" class="text-danger" title="Delete Post"><small><i
+                class="fa fa-trash"></i></small></a></button> 
                
                 
                 <button button type="button" class="btn btn-primary" style="margin:0.6vw; padding:0.5vw; text-decoration:none;"> <span class="foot"> <a href="{{ url_for('main.blog_details', id = blog.id)}}"style= "color:white; ">Comment</a></span></button>

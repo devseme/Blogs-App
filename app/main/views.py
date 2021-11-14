@@ -79,13 +79,14 @@ def update_pic(uname):
 @login_required
 def delete_blog(id):
     """
-        View delete blog function that returns the deleted  blog page and its data
+        View delete post function that returns the delete post page and its data
     """
     blog = Blog.query.get_or_404(id)
     db.session.delete(blog)
     db.session.commit()
     flash('You have successfully deleted the blog', 'success')
-    return redirect(url_for('main.index'))    
+    return redirect(url_for('main.index')) 
+
 @main.route('/comment', methods=['GET', 'POST'])
 @login_required
 def add_comment():
