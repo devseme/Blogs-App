@@ -102,3 +102,9 @@ class Comment(db.Model):
         author = User.query.filter_by(id=user_id).first()
 
         return author          
+    # delete comment
+    @classmethod
+    def delete_comment(cls, id):
+        comment = Comment.query.filter_by(id=id).first()
+        db.session.delete(comment)
+        db.session.commit()    

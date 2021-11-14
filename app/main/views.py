@@ -118,3 +118,17 @@ def blog_details(id):
         form.comment.data = ''
         flash('Your comment has been posted successfully!')
     return render_template('comments.html', blog=blogs, comment=comments, comment_form=form)
+
+# delete comment
+@main.route('/comment/<int:id>/delete', methods=['GET', 'POST'])
+@login_required
+def delete_comment(id):
+    """
+        View delete comment function that returns the delete comment page and its data
+    """
+    comment = Comment.get_comment(id)
+   
+    db.session.delete(comment)
+    db.session.commit()
+    flash('You have successfully deleted the comment', 'success')
+    return redirect(url_for('main.profile', username=current_user.username))    
