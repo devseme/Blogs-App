@@ -23,4 +23,10 @@ class UpdateProfileForm(FlaskForm):
     username = StringField('Username', validators=[Required(), Length(1, 64)])
     email = StringField('Email', validators=[Required(), Length(1, 64), Email()])
     bio = TextAreaField('About...', validators=[Required(), Length(1, 100)])
-    submit = SubmitField('Submit')    
+    submit = SubmitField('Submit')   
+
+
+class CommentForm(FlaskForm):
+    comment = TextAreaField('Body', validators=[Required()])
+    submit = SubmitField('Submit')
+

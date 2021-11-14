@@ -53,7 +53,12 @@ background-repeat: no-repeat;"
               
                <button type="button" class="btn btn-danger" style=" margin-left:38vw; "a href="{{ url_for('main.delete_blog',id=blog.id)}}" class="text-danger" title="Delete Blog">Delete Blog</a></button>
 
-       
+               
+                
+                <button button type="button" class="btn btn-primary" style="margin:0.6vw; padding:0.5vw; text-decoration:none;"> <span class="foot"> <a href="{{ url_for('main.blog_details', id = blog.id)}}"style= "color:white; ">Comment</a></span></button>
+
+                 
+             
              
          
             </div>
