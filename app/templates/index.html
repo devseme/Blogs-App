@@ -1,12 +1,26 @@
 
 {% extends 'base.html'%}
 {% import 'macros.html' as macro %}
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+{% endblock %}
 {%block content%}
-<div class="col-sm-12">
+
+<div class="col-sm-12"style="background-image: url('https://cdn.pixabay.com/photo/2021/10/28/09/59/city-6749295_960_720.jpg');
+background-position: center center;
+background-size: cover;
+background-repeat: no-repeat;"
+>
+
     <div class="panel panel-default">
         <div class="card">
             <div class="panel-body" >
             <blockquote class="blockquote mb-0 card-body">
+                <h2 class="title text-center">Quote of the Day</h2>
                 <p>{{quote.quote}}</p>
                 <footer class="blockquote-footer">
                     <cite title="Source Title" style="color: #C4402A;" >{{quote.author| upper}}</cite>
@@ -20,13 +34,16 @@
 </div>
 
 
-
+<h1 class="title text-center"style="color:#FFFFFF"><strong>Blogs</strong></h1>
 {% for blog in blogs %} 
-    <div class="col-md-3 ">
+
+    <div class="col-md-12">
+        
         <div class="text-centre">
-            <div class="card text-white bg-info mb-3" style="max-width: 30rem; margin:1vw; padding:1vw;">
+            
+            <div class="card text-white bg-info mb-3" style="width: 100vw; ">
                 <h4 class="card-header">Blog Title :{{blog.title}}</h4>
-                <div class="card-body">
+                <div class="card-body w-75">
 
                 <p class="card-title"> Blog Category: {{blog.category}}</p>
 
@@ -34,13 +51,9 @@
 
                 <p class="card-text">Blogger: {{blog.created_by}}</p>
               
-               <button type="button" class="btn btn-danger"a href="{{ url_for('main.delete_blog',id=blog.id)}}" class="text-danger" title="Delete Blog">Delete Blog</a></button>
+               <button type="button" class="btn btn-danger" style=" margin-left:38vw; "a href="{{ url_for('main.delete_blog',id=blog.id)}}" class="text-danger" title="Delete Blog">Delete Blog</a></button>
 
-        <footer class="footer" style="width:auto;color:#FFFFFF;background-color: #292A44;">
-            <div class="copyright text-center">
-                <p> copyright &copy;2021 BLOGSITE-devseme</p> 
-            </div>
-        </footer>  
+       
              
          
             </div>
@@ -48,8 +61,18 @@
          
         </div>
         
-    </div>
- 
+    
+   
+</div>
+
+     
+    
+
 {% endfor %}
+<footer class="footer" style="width:100vw;height:7vh;color:#FFFFFF;background-color: #292A44;margin-top:100vh;">
+    <div class="copyright text-center">
+        <p> copyright &copy;2021 BLOGSITE-devseme</p>
+    </div>
+</footer>
 
 {%endblock%}
