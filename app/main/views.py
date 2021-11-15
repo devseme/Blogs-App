@@ -126,9 +126,11 @@ def delete_comment(id):
     """
         View delete comment function that returns the delete comment page and its data
     """
-    comment = Comment.get_comment(id)
-   
+    comment = Comment.query.filter_by(id=id).first()
     db.session.delete(comment)
     db.session.commit()
+   
+    
+  
     flash('You have successfully deleted the comment', 'success')
-    return redirect(url_for('main.profile', username=current_user.username))    
+    return redirect(url_for('main.profile', uname=current_user.username))    
