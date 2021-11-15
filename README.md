@@ -12,6 +12,10 @@ Additionally, there's a feature that displays random quotes to inspire users.
 + user can view the blogs you have created in your profile page.
 + user can comment on the different blogs and leave feedback.
 
+## Requirements
+
+Python 3.8  
+Flask
 
 ## Setting up the Project
 
@@ -26,7 +30,7 @@ There are no unresolved issues in regards to this code that I know of.
 
 ## Prerequisites
 To be able to run this web application, you will need to have a web browser, preferably Google Chrome.
-Just open the url link deployed on GitHub and run it.
+Just deployed link on GitHub and run it.
 
 
 ## Technologies Used
