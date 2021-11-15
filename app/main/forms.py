@@ -9,7 +9,7 @@ from wtforms import ValidationError
 
 class BlogForm(FlaskForm):
     title = StringField('Blog title', validators=[Required()])
-    category = SelectField('Blog category',choices=[('Select a category','Select a category'),('Fashion', 'Fashion'),('Sports','Sports'),('Travel','Travel'),('Tech','Tech')], validators=[Required()])
+    category = SelectField('Blog category',choices=[('Select a category','Select a category'),('E News', 'E news'),('World Travel','World Travel'),('Photography','Photography'),('Entertainment','Entertainment')], validators=[Required()])
     content = TextAreaField('Body', validators=[Required()])
     created_by= StringField('Blog created_by',validators=[Required()])
     submit = SubmitField('Submit')

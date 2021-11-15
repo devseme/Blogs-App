@@ -22,10 +22,11 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
     </div>
 
     {% for comment in comment %}
-
-    <p>{{ comment.comment }}</p>
+     <p style="margin-left:10px;"><u>Comments:</u></p>
+     <ul>
+ <li><p>{{ comment.comment }}</p></li></ul>
     <a href="{{ url_for('main.delete_comment',id=comment.id)}}" style="margin-left: 10px;;" class="text-danger" title="Delete Post">
-        <small><i class="fa fa-trash"></i></small>
+        <large><i class="fa fa-trash"></i></large>
     </a>
     {% endfor %}
 </body>
