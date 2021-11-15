@@ -42,17 +42,17 @@ background-repeat: no-repeat;"
         <div class="text-centre">
             
             <div class="card text-white bg-info mb-3" style="width: 100vw; ">
-                <h4 class="card-header">Blog Title :{{blog.title}}</h4>
-                <div class="card-body w-75">
+                <h4 class="card-header text-centre" style="text-align: center;"><strong>Blog Title :{{blog.title}}</strong></h4>
+                <div class="card-body w-75"style="text-align: center;">
 
-                <p class="card-title"> Blog Category: {{blog.category}}</p>
+                <p class="card-title"style="text-align: center;"><strong> Blog Category: {{blog.category}}</strong></p>
 
-                <p class="card-text">Blog Description: {{blog.content}}</p>
+                <p class="card-text ">Blog Description: {{blog.content}}</p>
 
-                <p class="card-text">Blogger: {{blog.created_by}}</p>
+                <p class="card-text " style="text-align: center;">Blogger: {{blog.created_by}}</p>
               
                <!--  "a href="{{ url_for('main.delete_blog',id=blog.id)}}" class="text-danger" title="Delete Blog">Delete Blog</a>-->
-               <button type="button" class="btn btn-danger"style=" margin-left:38vw;" a href="{{ url_for('main.delete_blog',id=blog.id)}}" class="text-danger" title="Delete Post"><small><i
+               <button type="button" class="btn btn-danger"a href="{{ url_for('main.delete_blog',id=blog.id)}}" class="text-danger" title="Delete Post"><small><i
                 class="fa fa-trash"></i></small></a></button> 
                
                 

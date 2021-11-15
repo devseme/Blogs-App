@@ -24,7 +24,7 @@ integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg
     {% for comment in comment %}
 
     <p>{{ comment.comment }}</p>
-    <a href="{{ url_for('main.delete_comment',id=comment.id)}}" class="text-danger" title="Delete Post">
+    <a href="{{ url_for('main.delete_comment',id=comment.id)}}" style="margin-left: 10px;;" class="text-danger" title="Delete Post">
         <small><i class="fa fa-trash"></i></small>
     </a>
     {% endfor %}
