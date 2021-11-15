@@ -40,6 +40,10 @@ Just deployed link on GitHub and run it.
 - Bootstrap
 - Python
 - Flask
+- 
+## Contributing
+
+Feel free to raise a issue or make a pull request to fix a bug or add a new feature.(@Devseme)
 
 ## Support and contact details
 If there are any issues on how the code runs, concerns, questions or ideas, kindly reach out to me on my email address; 
